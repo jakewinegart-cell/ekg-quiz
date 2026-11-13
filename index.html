@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#7a1f2b">
+<title>EKG Strip Quiz</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top" id="top">
+  <div class="row1">
+    <h1>EKG Strip Quiz</h1>
+    <div class="tools">
+      <button id="shuffleBtn" class="chip" aria-pressed="false" title="Shuffle deck">🔀 Shuffle</button>
+      <button id="restartBtn" class="chip" title="Restart">↺</button>
+    </div>
+  </div>
+  <div class="score" id="score" aria-live="polite">You got 0 out of 0 correct</div>
+  <div class="row2"><span id="progress">Strip 1 / 1</span><span id="levelTag"></span></div>
+  <div class="bar"><div id="barFill"></div></div>
+</header>
+
+<main id="card" class="card">
+  <div id="scenario" class="scenario" hidden></div>
+  <div class="stripWrap" id="stripWrap" title="Tap to enlarge"></div>
+  <div class="rateBox" id="rateBox"></div>
+  <p class="q">Identify the rhythm:</p>
+  <div id="options" class="options"></div>
+  <section id="feedback" class="feedback" hidden>
+    <div id="verdict" class="verdict"></div>
+    <h3>Why</h3>
+    <ul id="why"></ul>
+    <div class="tx"><h3>First-line intervention</h3><p id="tx"></p></div>
+  </section>
+  <div class="nav">
+    <button id="prevBtn" class="navBtn secondary">‹ Back</button>
+    <button id="nextBtn" class="navBtn">Next ›</button>
+  </div>
+  <p class="hint">Swipe left for the next strip · tap the strip to enlarge</p>
+</main>
+
+<div id="zoom" class="zoom" hidden>
+  <div class="zoomInner"><button id="zoomClose" class="chip close">✕ Close</button><div id="zoomBody"></div></div>
+</div>
+
+<footer class="foot">Educational prototype: synthesized strips, not medical advice. Follow current AHA/ACLS guidelines and local protocols.</footer>
+
+<script src="synth.js"></script>
+<script src="rhythms.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
